@@ -29,7 +29,7 @@ public class Main {
                 .chatMemory(chatMemory)
                 .build();
 
-        //System.out.print("Dialog open\n");
+        System.out.print("Dialog open\n");
         try (Scanner sc = new Scanner(System.in)) {
             while (true) {
                 System.out.print("> ");
