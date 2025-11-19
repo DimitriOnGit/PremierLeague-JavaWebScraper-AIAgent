@@ -15,7 +15,7 @@ public class AnalysisTool implements AgentTool {
         this.model = model;
     }
 
-    @Tool("Predict which team would win in a Premier League football match")
+    @Tool("Predict which team would win in a Premier League football match. Give your confidence in your prediction as a percentage.")
     public String compareTeams(String team1, String team2) {
         System.out.println("[Tool] compareTeams(" + team1 + ", " + team2 + ")");
         StringBuilder sb = new StringBuilder();
@@ -27,7 +27,7 @@ public class AnalysisTool implements AgentTool {
             sb.append(clubMap.get(clean1).getTable());
             sb.append("The statistics of " + team2 + ": ");
             sb.append(clubMap.get(clean2).getTable());
-            sb.append(" Compare the two statistics tables and give a brief summary. Give your confidence in your prediction as a percentage.");
+            //sb.append(" Compare the two statistics tables and give a brief summary. Give your confidence in your prediction as a percentage.");
         }
         else
             return "Cannot find club";
@@ -40,7 +40,7 @@ public class AnalysisTool implements AgentTool {
         StringBuilder sb = new StringBuilder();
         if(team != null) {
             String clean = team.toLowerCase().replaceAll("[^a-z]", "");
-            sb.append(" Highlight the strengths and shortcomings of the team as well as what one can expect of their performance. ");
+            //sb.append(" Highlight the strengths and shortcomings of the team as well as what one can expect of their performance. ");
             sb.append(clubMap.get(clean).getTable());
         }
         else
